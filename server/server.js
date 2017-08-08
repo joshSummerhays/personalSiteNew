@@ -1,4 +1,4 @@
-require('./config/config');
+// require('./config/config');
 
 // Get dependencies
 const express = require('express');
