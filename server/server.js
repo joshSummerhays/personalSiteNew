@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 // Get our API routes
-const api = require('./routes/api');
+// const api = require('./routes/api');
 
 const compression = require('compression');
 const app = express();
