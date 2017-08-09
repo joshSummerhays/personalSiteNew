@@ -40,12 +40,17 @@
       cursor: pointer;
     }
 
+    .panel1 { background-image:url(./assets/images/train_trax.jpg); }
+    .panel2 { background-image:url(./assets/images/lake.jpg); }
+    .panel3 { background-image:url(./assets/images/road.jpg); }
+    .panel4 { background-image:url(./assets/images/mountain.jpg); }
+    .panel5 { background-image:url(./assets/images/country_path.jpg); }
+    // .panel1 { background-image:url(https://static.pexels.com/photos/34950/pexels-photo.jpg); }
+    // .panel2 { background-image:url(https://static.pexels.com/photos/129441/pexels-photo-129441.jpeg); }
+    // .panel3 { background-image:url(https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg); }
+    // .panel4 { background-image:url(https://static.pexels.com/photos/368260/pexels-photo-368260.jpeg); }
+    // .panel5 { background-image:url(https://static.pexels.com/photos/236047/pexels-photo-236047.jpeg); }
 
-    .panel1 { background-image:url(https://static.pexels.com/photos/34950/pexels-photo.jpg); }
-    .panel2 { background-image:url(https://static.pexels.com/photos/129441/pexels-photo-129441.jpeg); }
-    .panel3 { background-image:url(https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg); }
-    .panel4 { background-image:url(https://static.pexels.com/photos/368260/pexels-photo-368260.jpeg); }
-    .panel5 { background-image:url(https://static.pexels.com/photos/236047/pexels-photo-236047.jpeg); }
     // .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
     // .panel2 { background-image:url(https://source.unsplash.com/1CD3fd8kHnE/1500x1500); }
     // .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
@@ -64,9 +69,9 @@
     }
 
     .panel > *:first-child { transform: translateY(-100%); }
-    .panel.open-active > *:first-child { transform: translateY(0); }
+    .panel.open-active > *:first-child { transform: translateY(60%); }
     .panel > *:last-child { transform: translateY(100%); }
-    .panel.open-active > *:last-child { transform: translateY(0); }
+    .panel.open-active > *:last-child { transform: translateY(-60%); }
 
     .panel p {
       text-transform: uppercase;
@@ -79,6 +84,10 @@
     }
 
     .panel.open {
-      flex: 5;
-      font-size:40px;
+        flex: 5;
+        font-size:40px;
+    }
+
+    .panel.gone p:nth-child(2) {
+        display: none;
     }

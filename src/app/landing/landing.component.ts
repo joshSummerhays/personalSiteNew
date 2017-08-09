@@ -41,6 +41,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
 
   transitionEnd(e){
     if (e.propertyName.includes('flex')) {
+      e.target.classList.toggle('gone');
       e.target.classList.toggle('open-active');
     }
   }
