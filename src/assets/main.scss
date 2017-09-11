@@ -8,3 +8,10 @@
 // @import "styles/menu";
 // @import "styles/footer";
 @import "styles/components/landing";
+
+.underline {
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
