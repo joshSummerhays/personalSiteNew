@@ -3,10 +3,10 @@ app-projects {
         min-height:100vh;
         overflow: hidden;
         display: flex;
-        flex-direction: column;
-        @include breakpoint(largeUp) {
-          flex-direction: row;
-        }
+        // flex-direction: column;
+        // @include breakpoint(largeUp) {
+        //   flex-direction: row;
+        // }
       }
       .panel-projects {
         background:#6B0F9C;
