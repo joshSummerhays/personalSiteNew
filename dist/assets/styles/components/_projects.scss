@@ -10,7 +10,7 @@ app-projects {
         // }
       }
       .panel-projects {
-        background:#6B0F9C;
+        // background:#6B0F9C;
         background: whitesmoke;
         border: 1px solid black;
         // &.panel-color-one {
@@ -27,10 +27,10 @@ app-projects {
         flex-basis: 100%;
         // min-width: 500px;
         height: 550px;
-        @media (min-width: 1000px) {
-          flex-basis: 50%;
-          height: 50vh;
-        }
+        // @media (min-width: 1000px) {
+          // flex-basis: 50%;
+          // height: 50vh;
+        // }
         box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
         // color:white;
         text-align: center;
