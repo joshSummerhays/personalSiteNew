@@ -1,3 +1,4 @@
+import { HttpService } from './../http.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  codewars: any = null;
+
+  constructor(private _http: HttpService) { 
+    _http.codewarsContentAnnounced$.subscribe(
+      (value: any) => {
+        this.codewars = value;
+      }
+    )
+  }
 
   ngOnInit() {
   }
