@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 // Get our API routes
-// const api = require('./routes/api');
+const api = require('./routes/api');
 
 const compression = require('compression');
 const app = express();
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(`${__dirname}/../`, 'dist')));
 
 // Set our api routes
-// app.use('/api', api);
+app.use('/api', api);
 
 // Catch all other routes and return the index file
   app.get('*', (req, res) => {

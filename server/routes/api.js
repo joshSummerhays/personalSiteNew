@@ -1,11 +1,59 @@
 const express = require('express');
 const router = express.Router();
-// const request = require('request');
+const request = require('request');
 // const _ = require('lodash');
-const { mongoose } = require('./../db/mongoose');
+// const { mongoose } = require('./../db/mongoose');
 // const { Wait } = require('./../models/waitlister');
 // const { Announce } = require('./../models/announce');
 // const { ObjectID } = require('mongodb');
+
+// CORS
+var env = process.env.NODE_ENV || 'development';
+
+if (env === 'development' || env === 'test') {
+    var cors = require('cors');
+    var whitelist = [
+        'http://localhost:3000',
+        'http://localhost:4200',
+        'https://joshsummerhays.com',
+        'http://joshsummerhays.com'
+    ];
+    var corsOptions = {
+        // exposedHeaders: ['x-auth'],
+        // origin: function (origin, callback) {
+        //     if (whitelist.indexOf(origin) !== -1) {
+        //         callback(null, true)
+        //     } else {
+        //         callback(new Error('Not allowed by CORS'))
+        //     }
+        // },
+        origin: '*',
+        credentials: true
+    }
+    router.all('*', cors(corsOptions));
+}
+
+//get codeWars info
+router.get('/codewars', (req, res) => {
+    let options = {
+        uri: `https://www.codewars.com/api/v1/users/joshSummerhays?access_key=${process.env.GET_USER_CODEWARS}`,
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        agentOptions: {
+            rejectUnauthorized: false
+        },
+        body: JSON.stringify(req.body)
+    };
+    return request(options, function (err, result, body) {
+        if(result.statusCode === 200){
+            res.status(200).send(body);
+        } else {
+            res.status(401).send({'e': body});
+        }
+    });
+});
 
 //add waitlister
 // router.post('/waitlisters', (req, res) => {
