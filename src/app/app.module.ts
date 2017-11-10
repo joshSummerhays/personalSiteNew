@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { HttpService } from './http.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ProjectsComponent } from './projects/projects.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
